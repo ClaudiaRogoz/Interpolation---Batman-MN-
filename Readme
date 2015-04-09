@@ -1,0 +1,31 @@
+Rogoz Claudia 311CA
+
+Se initializeaza toate valorile de care este nevoie: [xp,yp,x,px,Ns,xmax,np] in cadrul functiei initializa. Intr-o structura repetitiva (for i = 1: 10)se studiaza pe rand eroarea in urma alegerii a Ns(i) noduri din cadrul vectorului x.
+Pentru verificarea erorii se verifica daca functia este descrescatoare si daca diferenta intre eroarea de la pasul curent si anterior este mai mic decat o eroare (eps) primita ca parametru.
+
+In cadrul fiecarei functii de la task-urile: 1.1 , 1.2.1, 1.2.2 in cadrul for-ului (for i = 1: 10) se genereaza un vector xp care contine Ns(i) valori echidistante si yp = valorile functiei in xp calculat cu interp1. Totodata pentru fiecaree functie este apelata o functie de calcul a valorilor functiei in punctele descrise dar calculata cu metode implementate pe rand in fisiere.m corespunzatoare.
+Astfel SplineT apeleaza SplineTensionate, SplineL apeleaza SplineLiniar , iar SplineN apeleaza SplineNaturale.
+
+Fiecare dintre aceste functii returneaza numarul de noduri prntru care metoda converge (0 in cazul in care metoda nu converge) , eroare pentru care converge metoda ( = inf in cazul in care nu converge), x,xNs, fNs, pNs pentru generarea plot-urilor din cadrul task-ului 1.4.2.
+
+Metoda interpolarii cu functii spline liniare converge pentru eps = 0.025 cu Ns (numarul de noduri) = 200 cu eroarea 0.063202.
+Alte convergente:
+eps = 0.05 Ns = 200 er = 0.063202
+eps = 0.1  Ns = 150 er = 0.084648
+eps = 0.3  Ns = 100 er = 0.16850 
+Metoda interpolarii cu functii spline naturale converge pentru eps = 0.025 dar cu Ns
+Alte convergente:
+eps = 0.05 Ns = 250 er = 0.049405
+eps = 0.1  Ns = 150 er = 0.12560
+eps = 0.3  Ns = 150 er = 0.12560
+Metoda interpolarii cu functii spline tensionate converge pentru eps = 0.05  Ns = 250 er = 0.049405
+Alte convergente:
+eps = 0.05 Ns = 250 er = 0.049405
+eps = 0.1  Ns = 150 er = 0.12560
+eps = 0.3  Ns = 150 er = 0.12560
+In realizarea graficului de la task-ul 1.4.2 am folosit fisierul Locatie.m. Functia Locatie primeste ca parametru 1, 2 3 pentru realizarea graficelor pentru task-urile 1.1 respectiv 1.2.1 1.2.2.
+1 = pentru apelarea SplineL; 2 = apelarea SplineN 3 = apelarea SplineT.
+In cadrul functiei m-am folosit de functiile GNU octave: hold on, plot. 
+In realizarea graficelor fiecare functie a fost apelata cu un `eps definit.
+
+In cadrul task-ului 2, pentru aflarea reapitorului m-am folosit de functia ezplot cu parametrii urmatori: functia f si intervalele de existenta pentru x respectiv pentru y. 
